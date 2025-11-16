@@ -1,0 +1,1062 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* =========================
+   Root + Reset
+   ========================= */
+:root{
+    --bg-black-900:#f2f2fc;
+    --bg-black-100:#fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900:#301e4d;
+    --text-black-700:#504e70;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::before,::after{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+.hidden{
+    display: none !important;
+}
+
+/* =========================
+   Layout Containers
+   ========================= */
+.section{
+    background: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    padding: 0 30px;
+    opacity: 1;
+}
+
+.main-content{
+    padding-left: 270px;
+}
+
+.padd-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.padding-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container{
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+
+.section .container{
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.section-title{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.section-title h2{
+    font-size: 40px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title h2::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 50px;
+    background-color: var(--skin-color);
+    left: 0;
+    top: 100%;
+}
+
+.section-title h2::after{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    background-color: var(--skin-color);
+    left: 0;
+    top: 100%;
+    margin-top: 8px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 35px;
+    color: white;
+    border-radius: 40px;
+    border: none;
+    display: inline-block;
+    white-space: nowrap;
+    background-color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* =========================
+   Shadows
+   ========================= */
+.shadow-dark{
+    box-shadow: 0 0 20px rgba(48, 46 , 77 , 0.15);
+}
+
+/* =========================
+   Sidebar / Aside
+   ========================= */
+.aside{
+    width: 270px;
+    background: var(--bg-black-100);
+    position: fixed;
+    left:0;
+    top:0;
+    padding: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--bg-black-50);
+    height: 100%;
+    z-index: 10;
+}
+
+.aside .logo{
+    position:absolute;
+    top: 50px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.aside .logo a{
+    color: var(--text-black-900);
+    font-weight: 700;
+    padding: 15px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.aside .logo a span{
+    font-family: 'Clicker script',cursive;
+    font-size: 40px;
+}
+
+.aside .logo a::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid var(--skin-color);
+    border-left: 5px solid var(--skin-color);
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo a::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid var(--skin-color);
+    border-right: 5px solid var(--skin-color);
+    top: 0;
+    right: 0;
+}
+
+.aside .nav-toggler{
+    height: 40px;
+    width: 45px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: var(--bg-black-100);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside .nav-toggler span{
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
+}
+
+.aside .nav-toggler span::before{
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+
+.aside .nav-toggler span::after{
+    content: '';
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+.aside .nav{
+    margin-top: 50px;
+}
+
+.aside .nav li{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.aside .nav li a{
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+.aside .nav li a:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.aside .nav li a i{
+    margin-right: 15px;
+}
+
+/* =========================
+   Home
+   ========================= */
+.home{
+    min-height: 100vh;
+    display: flex;
+    color:var(--text-black-900);
+}
+
+.home .home-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+h3.hello{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+h3.hello span{
+    font-family: 'Clicker Script' , cursive;
+    font-size:60px;
+    font-weight: 900;
+    color: var(--skin-color);
+}
+
+h3.my-profession{
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing{
+    color: var(--skin-color);
+}
+
+.home-info p{
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home .home-img{
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.home-img::after{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+    right: 20px;
+    bottom: -40px;
+}
+
+.home-img::before{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    left: 20px;
+    top: -40px;
+}
+
+.home .home-img img{
+    height: 400px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* =========================
+   About
+   ========================= */
+.about .about-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .about-text h3{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .about-text h3 span{
+    color: var(--skin-color);
+}
+
+.about .about-content .about-text p{
+    font-size: 23px;
+    line-height: 30px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .personsal-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: 40px;
+}
+
+.about .about-content .personsal-info .info-item{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about .about-content .personsal-info .info-item p{
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 20px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.about .about-content .personsal-info .info-item p span{
+    color: var(--text-black-700);
+    font-weight: 400;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+.about .about-content .personsal-info .buttons{
+    margin-top: 30px;
+}
+
+.about .about-content .personsal-info .buttons .btn{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.about .about-content .skills{
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-top: 40px;
+}
+
+.about .about-content .skills .skill-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.about .about-content .skills .skill-item h5{
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+
+.about .about-content .skills .skill-item .progress{
+    background-color: var(--bg-black-50);
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+
+.about .about-content .skills .skill-item .progress .progress-in{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+}
+
+.about .about-content .skills .skill-item .skill-percent{
+    position: absolute;
+    right: 0;
+    color: var(--text-black-900);
+    top: -40px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+/* Education / Experience */
+.about .about-content .education,
+.about .about-content .experience{
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.about .about-content h3.title{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .timline-box{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .timline{
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.about .about-content .timline .timline-item{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.about .about-content .timline .timline-item:last-child{
+    padding-bottom: 0;
+}
+
+.about .about-content .timline .timline-item::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+
+.about .about-content .timline .circle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+
+.about .about-content .timline .timline-date{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .timline .timline-date .fa{
+    margin-right: 5px;
+}
+
+.about .about-content .timline .timline-title{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+
+.about .about-content .timline .timline-text{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+
+/* =========================
+   Portfolio
+   ========================= */
+.portfolio .container{
+    padding-bottom: 40px;
+}
+
+.portfolio .portfolio-heading{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.portfolio .portfolio-heading h2{
+    color: var(--text-black-900);
+    font-weight: 500;
+}
+
+.portfolio .portfolio-item{
+    flex: 0 0 90%;
+    max-width: 90%;
+    margin-bottom: 30px;
+}
+
+.portfolio .portfolio-item-inner{
+    border: 6px solid var(--bg-black-100);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* =========================
+   Contact Form
+   ========================= */
+.mail{
+    display: block;
+    margin-left: 33%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px 300px 5px 5px;
+}
+
+.msg{
+    display: block;
+    margin-left: 33%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px 300px 200px 5px;
+}
+
+.submit{
+    display: block;
+    margin-left: 48%;
+    margin-bottom: 10px;
+    margin-top:20px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    border-color: blue;
+    border-style: solid;
+}
+
+/* =========================
+   Footer / Socials
+   ========================= */
+footer p{
+    text-align: center;
+}
+
+.socials{
+    margin-bottom: 30px;
+    margin-left: 48%;
+}
+
+/* =========================
+   Hover Effects
+   ========================= */
+.about .about-content .skills .skill-item:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-item:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about .about-content .timline:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* =========================
+   Logos inside timeline / portfolio
+   ========================= */
+.about .about-content .timline .logo,
+.portfolio .logo {
+    width: 100px; 
+    height: auto;
+    margin-left: 10px; 
+    vertical-align: middle; 
+}
+
+/* =========================
+   Snowfall overlay
+   ========================= */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* =========================
+   Open To / Work Auth text
+   ========================= */
+.open-to,
+.work-auth {
+    font-size: 15px;
+    color: var(--text-black-700);
+    margin-top: 4px;
+}
+
+.open-to span,
+.work-auth span {
+    font-weight: 600;
+    color: var(--skin-color);
+}
+
+/* =========================
+   Skills Grid (chips)
+   ========================= */
+.skills-grid {
+    width: 100%;
+    background: var(--bg-black-100);
+    border-radius: 12px;
+    padding: 20px 22px 12px;
+    box-shadow: 0 0 15px rgba(48, 46, 77, 0.06);
+}
+
+.skills-row {
+    margin-bottom: 16px;
+}
+
+.skills-category {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-black-700);
+    margin-bottom: 6px;
+}
+
+.skills-chips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills-chips li {
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--bg-black-900);
+    border: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.skills-chips li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+/* =========================
+   Open-to-roles dropdown
+   ========================= */
+.open-roles-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.open-roles-panel {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    min-width: 260px;
+    max-width: 320px;
+    background: var(--bg-black-100);
+    border-radius: 12px;
+    padding: 14px 16px 10px;
+    border: 1px solid var(--bg-black-50);
+    box-shadow: 0 10px 25px rgba(48, 46, 77, 0.18);
+    z-index: 20;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0.18s ease-out;
+}
+
+.open-roles-wrapper.open .open-roles-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.open-roles-title {
+    font-size: 13px;
+    color: var(--text-black-700);
+    margin-bottom: 8px;
+}
+
+.open-roles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.open-roles-list li {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: var(--bg-black-900);
+    color: var(--text-black-900);
+    border: 1px solid var(--bg-black-50);
+}
+
+.open-roles-note {
+    font-size: 12px;
+    color: var(--text-black-700);
+    margin: 4px 0 0;
+}
+
+/* =========================
+   Portfolio pointer cursor
+   ========================= */
+.portfolio .portfolio-item-inner {
+    cursor: pointer;
+}
+
+/* =========================
+   About section entry animation
+   ========================= */
+@keyframes fadeInUpSoft {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about .about-content .about-text {
+    opacity: 0;
+    animation: fadeInUpSoft 0.7s ease-out forwards;
+}
+
+.about .about-content .personsal-info {
+    opacity: 0;
+    animation: fadeInUpSoft 0.7s ease-out forwards;
+    animation-delay: 0.15s;
+}
+
+.about .about-content .personsal-info .info-item {
+    border-radius: 8px;
+    transition: background-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.about .about-content .personsal-info .info-item p {
+    margin: 0;
+    padding: 10px 12px;
+}
+
+.about .about-content .personsal-info .info-item:hover {
+    background-color: var(--bg-black-100);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(48, 46, 77, 0.15);
+}
+
+/* =========================
+   Contact status text
+   ========================= */
+.contact-status {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-black-700);
+}
+
+.contact-status.success {
+    color: green;
+}
+
+/* =========================================================
+   RESPONSIVE: Tablets & small laptops (<= 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+    .main-content {
+        padding-left: 0;
+    }
+
+    .section {
+        padding: 0 18px;
+    }
+
+    .aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--bg-black-50);
+    }
+
+    .aside .logo {
+        position: static;
+        font-size: 24px;
+    }
+
+    .aside .nav-toggler {
+        display: flex;
+        position: static;
+    }
+
+    .aside .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .aside .nav li {
+        margin-bottom: 10px;
+    }
+
+    .aside.open .nav {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .home .home-info,
+    .home .home-img {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .home .home-img img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .about .about-content .personsal-info,
+    .about .about-content .skills,
+    .portfolio .portfolio-item,
+    .about .about-content .education,
+    .about .about-content .experience {
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding: 0;
+    }
+
+    .portfolio-item-inner {
+        padding: 10px;
+    }
+
+    .mail, .msg {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .msg {
+        padding-bottom: 80px;
+    }
+
+    .submit {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .socials {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about .about-content .skills .skill-item:hover,
+    .portfolio .portfolio-item-inner:hover,
+    .about .about-content .timline:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .open-roles-panel {
+        max-width: 100%;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: Extra-small phones (<= 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+    .section {
+        padding: 0 12px;
+    }
+
+    h3.hello {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    h3.hello span {
+        font-size: 38px;
+        font-weight: 800;
+    }
+
+    .home-info p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .about .about-content .about-text p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .about .about-content .personsal-info .info-item p {
+        font-size: 16px;
+    }
+
+    .skills-grid {
+        padding: 16px 14px 8px;
+    }
+
+    .skills-chips li {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 18px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+
+    .mail, .msg {
+        font-size: 16px;
+    }
+
+    .submit {
+        font-size: 16px;
+        padding: 6px 14px;
+    }
+
+    .socials img {
+        max-width: 40px;
+        height: auto;
+    }
+}
